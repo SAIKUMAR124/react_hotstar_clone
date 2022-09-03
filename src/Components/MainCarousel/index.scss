@@ -1,32 +1,94 @@
-.slider {
-	margin-top: 20px;
-	border: 2px solid red;
-	padding-left: 35px;
-	padding-right: 35px;
+.main-carousel {
+	width: 100vw;
+	margin: 0 auto;
 
-	& > button {
-		opacity: 0;
-		height: 100%;
-		width: 5vw;
-		z-index: 1;
-	}
+	.slider {
+		margin-top: 20px;
 
-	.image-container {
-		width: 80%;
-		margin: 0 auto;
-		height: 200px;
-
-		& > img {
+		& > button {
+			opacity: 0;
 			height: 100%;
+			width: 5vw;
+			z-index: 1;
+		}
+
+		& > .slick-next {
+			right: 5px;
+			opacity: 0;
+		}
+
+		& > .slick-prev {
+			left: 5px;
+			z-index: 1;
+			opacity: 0;
+		}
+
+		&:hover > .slick-prev {
+			opacity: 1;
+		}
+
+		&:hover > .slick-next {
+			opacity: 1;
+		}
+
+		& > .slick-prev:before {
+			font-size: 0px;
+		}
+
+		& > .slick-next:before {
+			font-size: 0px;
 		}
 	}
+	.Carousel-container {
+		margin-left: 5px;
+		margin-right: 5px;
 
-	& > .slick-next {
-		right: 5px;
-	}
+		.Carousel-con {
+			height: 75vh;
+			display: flex;
 
-	& > .slick-prev {
-		left: 5px;
-		z-index: 1;
+			.carousel-content {
+				width: 300px;
+				margin-left: 25px;
+
+				padding-top: 5rem;
+
+				.content {
+					padding-right: 10px;
+					padding-left: 15px;
+
+					.title {
+						font-size: 28px;
+						margin-bottom: 15px;
+					}
+					.category {
+						font-size: 16px;
+						margin-bottom: 15px;
+					}
+					.description {
+						font-size: 16px;
+						line-height: 28px;
+					}
+				}
+			}
+
+			.carousel-img {
+				width: 52vw;
+				position: relative;
+
+				& > img {
+					border-top-right-radius: 5px;
+					border-bottom-right-radius: 5px;
+				}
+
+				.img-gradient {
+					position: absolute;
+					width: 200px;
+					top: 0;
+					background: linear-gradient(to right, #030b17, rgba(0, 0, 0, 0));
+					height: 100%;
+				}
+			}
+		}
 	}
 }

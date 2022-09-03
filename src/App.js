@@ -1,13 +1,16 @@
 import './App.scss';
-import NormalCarousel from './Components/NormalCarousel';
-import { Button } from '@mui/material';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
 
 function App() {
 	return (
-		<div className='App'>
-			<h1>Hello</h1>
-			<NormalCarousel />
-			<Button variant='contained'>Submit</Button>
+		<div>
+			<h1>Header</h1>
+			<Switch>
+				<Route path='/' exact>
+					<HomePage />
+				</Route>
+			</Switch>
 		</div>
 	);
 }
