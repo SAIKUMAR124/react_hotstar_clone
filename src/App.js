@@ -1,11 +1,12 @@
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
+import Header from './Components/Header';
 
 function App() {
 	return (
 		<div>
-			<h1>Header</h1>
+			<Header />
 			<Switch>
 				<Route path='/' exact>
 					<Login />
