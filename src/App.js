@@ -1,6 +1,6 @@
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
+import Login from './Pages/Login';
 
 function App() {
 	return (
@@ -8,7 +8,7 @@ function App() {
 			<h1>Header</h1>
 			<Switch>
 				<Route path='/' exact>
-					<HomePage />
+					<Login />
 				</Route>
 			</Switch>
 		</div>
