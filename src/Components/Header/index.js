@@ -6,8 +6,20 @@ import AddIcon from '@mui/icons-material/Add';
 import TvIcon from '@mui/icons-material/Tv';
 import MovieIcon from '@mui/icons-material/Movie';
 import SportsBaseballIcon from '@mui/icons-material/SportsBaseball';
+import { auth, provider } from '../../firebase';
 
 const Header = () => {
+	const handleAuth = () => {
+		auth
+			.signInWithPopup(provider)
+			.then((result) => {
+				console.log(result);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
 	return (
 		<nav className='header-nav'>
 			<img src='images/login/logo.svg' className='header-logo' alt='' />
@@ -37,7 +49,7 @@ const Header = () => {
 					<span className='text'>SPORTS</span>
 				</div>
 			</div>
-			<div className="login">Login</div>
+			<div className='login' onClick={handleAuth}>Login</div>
 		</nav>
 	);
 };
