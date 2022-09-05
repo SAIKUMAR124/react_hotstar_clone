@@ -1,4 +1,4 @@
-import { SET_USER_LOGIN_DETAILS } from './userActionTypes';
+import { SET_USER_LOGIN_DETAILS, SET_USER_SIGN_OUT } from './userActionTypes';
 
 export const setUserLoginDetails = (data) => {
 	return {
@@ -9,6 +9,6 @@ export const setUserLoginDetails = (data) => {
 
 export const setUserSignOut = () => {
 	return {
-		type: SET_USER_LOGIN_DETAILS,
+		type: SET_USER_SIGN_OUT,
 	};
 };

@@ -2,6 +2,8 @@ import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Header from './Components/Header';
+import HomePage from './Pages/HomePage';
+import SearchPage from './Pages/SearchPage';
 
 function App() {
 	return (
@@ -10,6 +12,12 @@ function App() {
 			<Switch>
 				<Route path='/' exact>
 					<Login />
+				</Route>
+				<Route path='/home' exact>
+					<HomePage />
+				</Route>
+				<Route path='/search' exact>
+					<SearchPage />
 				</Route>
 			</Switch>
 		</div>

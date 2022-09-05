@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './index.scss';
 
 const Login = () => {
+
   useEffect(() => {
     document.title = 'Hotstar: Login Page';
   },[])
