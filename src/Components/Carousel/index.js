@@ -4,13 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const Carousel = () => {
-	const [imgData, setImgData] = useState();
-
-	useEffect(() => {
-		setImgData(data);
-	}, []);
-
+const Carousel = ({ title, data }) => {
 	let settings = {
 		dots: false,
 		infinite: false,
@@ -20,14 +14,14 @@ const Carousel = () => {
 		className: 'sliderr variable-width',
 		variableWidth: true,
 		responsive: [
-      {
-        breakpoint: 768,
+			{
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 6,
 					slidesToScroll: 6,
 					initialSlide: 0,
 				},
-      },
+			},
 			{
 				breakpoint: 600,
 				settings: {
@@ -48,15 +42,18 @@ const Carousel = () => {
 	return (
 		<div className='normal-carousel'>
 			<div className='cat-name'>
-				<div className='name'>Recomended</div>
+				<div className='name'>{title}</div>
 				<div className='more'>More</div>
 			</div>
 			<Slider {...settings}>
-				{imgData
-					? imgData.map((item, index) => {
+				{data
+					? data.map((item, index) => {
 							return (
 								<div key={index} className='img-con'>
-									<img src={`/images/data/${item.image}`} alt='' />
+									<img
+										src={`${process.env.REACT_APP_BASE_IMAGE_URL}${item.poster_path}`}
+										alt=''
+									/>
 								</div>
 							);
 					  })
@@ -67,60 +64,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-const data = [
-	{
-		image: 'BB6.jpg',
-	},
-	{
-		image: 'criminal_justice.png',
-	},
-	{
-		image: 'heaven.jpg',
-	},
-	{
-		image: 'she_hulk.jpg',
-	},
-	{
-		image: 'sketch.jpg',
-	},
-	{
-		image: 'kadavar.jpg',
-	},
-	{
-		image: 'the_warrior.jpg',
-	},
-	{
-		image: 'vattam.jpg',
-	},
-	{
-		image: 'vikram.jpg',
-	},
-	{
-		image: 'BB6.jpg',
-	},
-	{
-		image: 'criminal_justice.png',
-	},
-	{
-		image: 'heaven.jpg',
-	},
-	{
-		image: 'she_hulk.jpg',
-	},
-	{
-		image: 'sketch.jpg',
-	},
-	{
-		image: 'kadavar.jpg',
-	},
-	{
-		image: 'the_warrior.jpg',
-	},
-	{
-		image: 'vattam.jpg',
-	},
-	{
-		image: 'vikram.jpg',
-	},
-];
