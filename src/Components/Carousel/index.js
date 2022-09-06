@@ -15,6 +15,14 @@ const Carousel = ({ title, data }) => {
 		variableWidth: true,
 		responsive: [
 			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 7,
+					slidesToScroll: 7,
+					initialSlide: 0,
+				},
+			},
+			{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 6,
