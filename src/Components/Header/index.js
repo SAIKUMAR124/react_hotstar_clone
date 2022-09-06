@@ -72,11 +72,8 @@ const Header = () => {
 							<HomeIcon className='icon' />
 							<span className='text'>HOME</span>
 						</div>
-						<div className='nav-con'>
-							<SearchIcon
-								className='icon'
-								onClick={() => history.push('/search')}
-							/>
+						<div className='nav-con' onClick={() => history.push('/search')}>
+							<SearchIcon className='icon' />
 							<span className='text'>SEARCH</span>
 						</div>
 						<div className='nav-con'>
