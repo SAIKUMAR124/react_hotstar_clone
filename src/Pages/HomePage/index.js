@@ -1,11 +1,18 @@
 import React from 'react';
+import ImgSlider from '../../Components/ImgSlider';
+import './index.scss';
 
 const HomePage = () => {
 	return (
-		<div>
-			<h1>Basic Slider</h1>
-			<h1>Footer</h1>
-		</div>
+		<main
+			className='home-page'
+			style={{
+				background:
+					'url(images/home/home-background.png) center center / cover no-repeat fixed',
+			}}
+		>
+			<ImgSlider />
+		</main>
 	);
 };
 
