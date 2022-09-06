@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
 	setLatestMovies,
 	setPopularMovies,
+	setPopularShows,
 } from '../../app/reducers/movies/movieActions';
 import Brands from '../../Components/Brands';
 import Carousel from '../../Components/Carousel';
@@ -35,8 +36,19 @@ const HomePage = () => {
 				});
 		};
 
+		const PopularShows = () => {
+			axios
+				.get(
+					`${process.env.REACT_APP_BASE_URL}tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+				)
+				.then((response) => {
+					dispatch(setPopularShows(response.data));
+				});
+		};
+
 		LatestMovies();
 		PopularMovies();
+		PopularShows();
 	}, []);
 
 	return (
@@ -50,8 +62,8 @@ const HomePage = () => {
 			<ImgSlider />
 			<Brands />
 			<Carousel data={movies.latestMovies.results} title='Latest' />
-			<Carousel data={movies.popularMovies.results} title='Popular' />
-			
+			<Carousel data={movies.popularMovies.results} title='Popular Movies' />
+			<Carousel data={movies.popularShows.results} title='Popular Shows' />
 		</main>
 	);
 };

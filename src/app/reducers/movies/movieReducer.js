@@ -1,8 +1,13 @@
-import { LATEST_MOVIES, POPULAR_MOVIES } from './movieActionTypes';
+import {
+	LATEST_MOVIES,
+	POPULAR_MOVIES,
+	POPULAR_SHOWS,
+} from './movieActionTypes';
 
 const initialState = {
-	popularMovies: [],
-	latestMovies: [],
+	popularMovies: {},
+	latestMovies: {},
+	popularShows: {},
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -17,6 +22,12 @@ export const movieReducer = (state = initialState, action) => {
 			return {
 				...state,
 				popularMovies: action.payload,
+			};
+
+		case POPULAR_SHOWS:
+			return {
+				...state,
+				popularShows: action.payload,
 			};
 
 		default:
