@@ -5,6 +5,8 @@ import {
 	setLatestMovies,
 	setPopularMovies,
 	setPopularShows,
+	setTopRatedMovies,
+	setUpComingMOvies,
 } from '../../app/reducers/movies/movieActions';
 import Brands from '../../Components/Brands';
 import Carousel from '../../Components/Carousel';
@@ -46,9 +48,31 @@ const HomePage = () => {
 				});
 		};
 
+		const UpComingMovies = () => {
+			axios
+				.get(
+					`${process.env.REACT_APP_BASE_URL}movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+				)
+				.then((response) => {
+					dispatch(setUpComingMOvies(response.data));
+				});
+		};
+
+		const TopRatedMovies = () => {
+			axios
+				.get(
+					`${process.env.REACT_APP_BASE_URL}movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+				)
+				.then((response) => {
+					dispatch(setTopRatedMovies(response.data));
+				});
+		};
+
 		LatestMovies();
 		PopularMovies();
 		PopularShows();
+		UpComingMovies();
+		TopRatedMovies();
 	}, []);
 
 	return (
@@ -61,9 +85,11 @@ const HomePage = () => {
 		>
 			<ImgSlider />
 			<Brands />
-			<Carousel data={movies.latestMovies.results} title='Latest' />
+			<Carousel data={movies.latestMovies.results} title='Latest & Trending' />
 			<Carousel data={movies.popularMovies.results} title='Popular Movies' />
 			<Carousel data={movies.popularShows.results} title='Popular Shows' />
+			<Carousel data={movies.upcomingMovies.results} title='New & Upcoming' />
+			<Carousel data={movies.topRatedMovies.results} title='Top Rated Movies' />
 			<div style={{ height: '50px' }}></div>
 		</main>
 	);
