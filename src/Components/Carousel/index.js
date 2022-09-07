@@ -3,8 +3,11 @@ import './index.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import { useHistory } from 'react-router-dom';
 
 const Carousel = ({ title, data }) => {
+	const history = useHistory();
+
 	let settings = {
 		dots: false,
 		infinite: false,
@@ -57,7 +60,11 @@ const Carousel = ({ title, data }) => {
 				{data
 					? data.map((item, index) => {
 							return (
-								<div key={index} className='img-con'>
+								<div
+									key={index}
+									className='img-con'
+									onClick={() => history.push(`/home/${item.id}`)}
+								>
 									<img
 										src={`${process.env.REACT_APP_BASE_IMAGE_URL}${item.poster_path}`}
 										alt=''

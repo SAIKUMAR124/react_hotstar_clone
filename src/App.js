@@ -4,6 +4,7 @@ import Login from './Pages/Login';
 import Header from './Components/Header';
 import HomePage from './Pages/HomePage';
 import SearchPage from './Pages/SearchPage';
+import SinglePage from './Pages/SinglePage';
 
 function App() {
 	return (
@@ -15,6 +16,9 @@ function App() {
 				</Route>
 				<Route path='/home' exact>
 					<HomePage />
+				</Route>
+				<Route path='/home/:id' exact>
+					<SinglePage />
 				</Route>
 				<Route path='/search' exact>
 					<SearchPage />
