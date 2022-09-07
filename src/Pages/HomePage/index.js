@@ -64,6 +64,7 @@ const HomePage = () => {
 			<Carousel data={movies.latestMovies.results} title='Latest' />
 			<Carousel data={movies.popularMovies.results} title='Popular Movies' />
 			<Carousel data={movies.popularShows.results} title='Popular Shows' />
+			<div style={{ height: '50px' }}></div>
 		</main>
 	);
 };
