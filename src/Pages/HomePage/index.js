@@ -16,6 +16,7 @@ import './index.scss';
 const HomePage = () => {
 	const dispatch = useDispatch();
 	const movies = useSelector((state) => state.movies);
+	const watchList = useSelector((state) => state.watchList.watchListItems);
 
 	useEffect(() => {
 		const PopularMovies = () => {

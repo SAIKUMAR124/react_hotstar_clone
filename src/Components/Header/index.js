@@ -62,12 +62,12 @@ const Header = () => {
 		<nav className='header-nav'>
 			<img src='images/login/logo.svg' className='header-logo' alt='' />
 
-			{!user.loggedIn ? (
+			{/* {!user.loggedIn ? (
 				<div className='login' onClick={handleAuth}>
 					Login
 				</div>
 			) : (
-				<>
+				<> */}
 					<div className='nav-menu'>
 						<div className='nav-con' onClick={() => history.push('/home')}>
 							<HomeIcon className='icon' />
@@ -77,7 +77,7 @@ const Header = () => {
 							<SearchIcon className='icon' />
 							<span className='text'>SEARCH</span>
 						</div>
-						<div className='nav-con'>
+						<div className='nav-con' onClick={() => history.push('/wishlist')}>
 							<AddIcon className='icon' />
 							<span className='text'>WATCHLIST</span>
 						</div>
@@ -103,8 +103,8 @@ const Header = () => {
 							<span onClick={handleAuth}>Sign Out</span>
 						</div>
 					</div>
-				</>
-			)}
+				{/* </>
+			)} */}
 		</nav>
 	);
 };
