@@ -8,6 +8,10 @@ import './index.scss';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import GroupWorkIcon from '@mui/icons-material/GroupWork';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import {
+	addItemToWatchList,
+	removeItemFromWatchList,
+} from '../../app/reducers/watchlist/watchlistActions';
 
 const SinglePage = () => {
 	const { id } = useParams();
@@ -15,6 +19,8 @@ const SinglePage = () => {
 	const [tvData, setTvData] = useState();
 	const dispatch = useDispatch();
 	const singleData = useSelector((state) => state.singleData.data);
+	const watchlist = useSelector((state) => state.watchList.watchListItems);
+	const [isPresentInWatchlist, setIsPresentInWatchlist] = useState(false);
 
 	useEffect(() => {
 		const getMovieDetails = () => {
@@ -51,6 +57,28 @@ const SinglePage = () => {
 			dispatch(setSingleData(tvData));
 		}
 	}, [movieData, tvData]);
+
+	useEffect(() => {
+		const isItemPresentInWatchList = () => {
+			if (id) {
+				const result = watchlist.filter((item) => item.id === parseInt(id));
+				if (result[0]?.id) {
+					setIsPresentInWatchlist(true);
+				} else {
+					setIsPresentInWatchlist(false);
+				}
+			}
+		};
+		isItemPresentInWatchList();
+	}, [watchlist, id]);
+
+	const handleWatchList = (data) => {
+		if (isPresentInWatchlist) {
+			dispatch(removeItemFromWatchList(data.id));
+		} else {
+			dispatch(addItemToWatchList(data));
+		}
+	};
 
 	return (
 		<div className='single-data'>
@@ -93,7 +121,12 @@ const SinglePage = () => {
 						</ul>
 						<div className='btn-container'>
 							<button className='watch-now'>Watch Now</button>
-							<button className='watch-list'>Watchlist</button>
+							<button
+								className='watch-list'
+								onClick={() => handleWatchList(singleData)}
+							>
+								{isPresentInWatchlist ? 'Remove from Watchlist' : 'Watchlist'}
+							</button>
 						</div>
 					</Grid>
 					<Grid item xs={6} className='img-con'>
@@ -101,6 +134,7 @@ const SinglePage = () => {
 							src={`${process.env.REACT_APP_BASE_IMAGE_URL}${singleData.poster_path}`}
 							width='100%'
 							height='100%'
+							alt=''
 						/>
 					</Grid>
 				</Grid>
