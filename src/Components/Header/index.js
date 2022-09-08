@@ -20,16 +20,16 @@ const Header = () => {
 	const user = useSelector((state) => state.user);
 	const history = useHistory();
 
-	useEffect(() => {
-		auth.onAuthStateChanged(async (user) => {
-			if (user) {
-				setUser(user);
-				history.push('/home');
-			} else {
-				history.push('/');
-			}
-		});
-	}, []);
+	// useEffect(() => {
+	// 	auth.onAuthStateChanged(async (user) => {
+	// 		if (user) {
+	// 			setUser(user);
+	// 			history.push('/home');
+	// 		} else {
+	// 			history.push('/');
+	// 		}
+	// 	});
+	// }, []);
 
 	const handleAuth = () => {
 		if (!user.loggedIn) {
@@ -37,6 +37,7 @@ const Header = () => {
 				.signInWithPopup(provider)
 				.then((result) => {
 					setUser(result.user.multiFactor.user);
+					history.push('/home');
 				})
 				.catch((error) => {
 					console.log(error);
