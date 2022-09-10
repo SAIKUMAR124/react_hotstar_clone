@@ -61,50 +61,49 @@ const Header = () => {
 	return (
 		<nav className='header-nav'>
 			<img src='images/login/logo.svg' className='header-logo' alt='' />
-
-			{!user.loggedIn ? (
+			{/* {!user.loggedIn ? (
 				<div className='login' onClick={handleAuth}>
 					Login
 				</div>
 			) : (
-				<>
-					<div className='nav-menu'>
-						<div className='nav-con' onClick={() => history.push('/home')}>
-							<HomeIcon className='icon' />
-							<span className='text'>HOME</span>
-						</div>
-						<div className='nav-con' onClick={() => history.push('/search')}>
-							<SearchIcon className='icon' />
-							<span className='text'>SEARCH</span>
-						</div>
-						<div className='nav-con' onClick={() => history.push('/wishlist')}>
-							<AddIcon className='icon' />
-							<span className='text'>WATCHLIST</span>
-						</div>
-						<div className='nav-con' onClick={() => history.push('/orginals')}>
-							<TvIcon className='icon' />
-							<span className='text'>ORGINALS</span>
-						</div>
-						<div className='nav-con' onClick={() => history.push('/movies')}>
-							<MovieIcon className='icon' />
-							<span className='text'>MOVIES</span>
-						</div>
-						<div className='nav-con'>
-							<SportsBaseballIcon className='icon' />
-							<span className='text'>SPORTS</span>
-						</div>
-					</div>
-					<div className='profile'>
-						<AccountCircleIcon
-							id='demo-controlled-open-select'
-							sx={{ fontSize: '2.5rem' }}
-						/>
-						<div className='drop-down'>
-							<span onClick={handleAuth}>Sign Out</span>
-						</div>
-					</div>
-				</>
-			)}
+				<> */}
+			<div className='nav-menu'>
+				<div className='nav-con' onClick={() => history.push('/home')}>
+					<HomeIcon className='icon' />
+					<span className='text'>HOME</span>
+				</div>
+				<div className='nav-con' onClick={() => history.push('/search')}>
+					<SearchIcon className='icon' />
+					<span className='text'>SEARCH</span>
+				</div>
+				<div className='nav-con' onClick={() => history.push('/wishlist')}>
+					<AddIcon className='icon' />
+					<span className='text'>WATCHLIST</span>
+				</div>
+				<div className='nav-con' onClick={() => history.push('/orginals')}>
+					<TvIcon className='icon' />
+					<span className='text'>ORGINALS</span>
+				</div>
+				<div className='nav-con' onClick={() => history.push('/movies')}>
+					<MovieIcon className='icon' />
+					<span className='text'>MOVIES</span>
+				</div>
+				<div className='nav-con'>
+					<SportsBaseballIcon className='icon' />
+					<span className='text'>SPORTS</span>
+				</div>
+			</div>
+			<div className='profile'>
+				<AccountCircleIcon
+					id='demo-controlled-open-select'
+					sx={{ fontSize: '2.5rem' }}
+				/>
+				<div className='drop-down'>
+					<span onClick={handleAuth}>Sign Out</span>
+				</div>
+			</div>
+			{/* </>
+			)} */}
 		</nav>
 	);
 };
