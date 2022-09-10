@@ -1,0 +1,8 @@
+.movies-page {
+	margin-top: 72px;
+	position: relative;
+	min-height: calc(100vh - 72px);
+	overflow-x: hidden;
+	display: block;
+	padding: 0 calc(3.5vw + 5px);
+}

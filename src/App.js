@@ -6,6 +6,8 @@ import HomePage from './Pages/HomePage';
 import SearchPage from './Pages/SearchPage';
 import SinglePage from './Pages/SinglePage';
 import Wishlist from './Pages/Wishlist';
+import Orginals from './Pages/Orginals';
+import Movies from './Pages/Movies';
 
 function App() {
 	return (
@@ -26,6 +28,12 @@ function App() {
 				</Route>
 				<Route path='/search' exact>
 					<SearchPage />
+				</Route>
+				<Route path='/orginals' exact>
+					<Orginals />
+				</Route>
+				<Route path='/movies' exact>
+					<Movies />
 				</Route>
 			</Switch>
 		</div>

@@ -16,7 +16,6 @@ import './index.scss';
 const HomePage = () => {
 	const dispatch = useDispatch();
 	const movies = useSelector((state) => state.movies);
-	const watchList = useSelector((state) => state.watchList.watchListItems);
 
 	useEffect(() => {
 		const PopularMovies = () => {
@@ -98,59 +97,59 @@ const HomePage = () => {
 
 export default HomePage;
 
-const data = [
-	{
-		image: 'BB6.jpg',
-	},
-	{
-		image: 'criminal_justice.png',
-	},
-	{
-		image: 'heaven.jpg',
-	},
-	{
-		image: 'she_hulk.jpg',
-	},
-	{
-		image: 'sketch.jpg',
-	},
-	{
-		image: 'kadavar.jpg',
-	},
-	{
-		image: 'the_warrior.jpg',
-	},
-	{
-		image: 'vattam.jpg',
-	},
-	{
-		image: 'vikram.jpg',
-	},
-	{
-		image: 'BB6.jpg',
-	},
-	{
-		image: 'criminal_justice.png',
-	},
-	{
-		image: 'heaven.jpg',
-	},
-	{
-		image: 'she_hulk.jpg',
-	},
-	{
-		image: 'sketch.jpg',
-	},
-	{
-		image: 'kadavar.jpg',
-	},
-	{
-		image: 'the_warrior.jpg',
-	},
-	{
-		image: 'vattam.jpg',
-	},
-	{
-		image: 'vikram.jpg',
-	},
-];
+// const data = [
+// 	{
+// 		image: 'BB6.jpg',
+// 	},
+// 	{
+// 		image: 'criminal_justice.png',
+// 	},
+// 	{
+// 		image: 'heaven.jpg',
+// 	},
+// 	{
+// 		image: 'she_hulk.jpg',
+// 	},
+// 	{
+// 		image: 'sketch.jpg',
+// 	},
+// 	{
+// 		image: 'kadavar.jpg',
+// 	},
+// 	{
+// 		image: 'the_warrior.jpg',
+// 	},
+// 	{
+// 		image: 'vattam.jpg',
+// 	},
+// 	{
+// 		image: 'vikram.jpg',
+// 	},
+// 	{
+// 		image: 'BB6.jpg',
+// 	},
+// 	{
+// 		image: 'criminal_justice.png',
+// 	},
+// 	{
+// 		image: 'heaven.jpg',
+// 	},
+// 	{
+// 		image: 'she_hulk.jpg',
+// 	},
+// 	{
+// 		image: 'sketch.jpg',
+// 	},
+// 	{
+// 		image: 'kadavar.jpg',
+// 	},
+// 	{
+// 		image: 'the_warrior.jpg',
+// 	},
+// 	{
+// 		image: 'vattam.jpg',
+// 	},
+// 	{
+// 		image: 'vikram.jpg',
+// 	},
+// ];
