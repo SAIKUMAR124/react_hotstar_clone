@@ -11,7 +11,9 @@ const ItemInformation = ({
 }) => {
 	return (
 		<Grid item xs={12} md={6} className='data'>
-			<h1 className='title'>{singleData.title}</h1>
+			<h1 className='title'>
+				{singleData.title ? singleData.title : singleData.original_name}
+			</h1>
 			<ul className='genres'>
 				{singleData.genres
 					? singleData.genres.map((item) => {
@@ -20,10 +22,12 @@ const ItemInformation = ({
 					: null}
 			</ul>
 			<div className='item-details-con'>
-				<span>
-					<GroupWorkIcon size='small' className='icon' />
-					{singleData.runtime}
-				</span>
+				{singleData.runtime ? (
+					<span>
+						<GroupWorkIcon size='small' className='icon' />
+						{singleData.runtime}
+					</span>
+				) : null}
 				<span>
 					<StarRateIcon size='small' className='icon' />
 					{singleData.vote_average}
@@ -34,7 +38,12 @@ const ItemInformation = ({
 				</span>
 			</div>
 			<div className='release-date'>
-				Release Date: <span>{singleData.release_date}</span>
+				Release Date:{' '}
+				<span>
+					{singleData.release_date
+						? singleData.release_date
+						: singleData.first_air_date}
+				</span>
 			</div>
 			<p className='description'>{singleData.overview}</p>
 			<ul className='production'>
